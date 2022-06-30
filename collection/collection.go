@@ -7,7 +7,7 @@
  */
 
 // “Collection” Methods
-package godash
+package collection
 
 // CountBy Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
 // The corresponding value of each key is the number of times the key was returned by iteratee.
