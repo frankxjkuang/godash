@@ -6,7 +6,7 @@
  * @Revise : --
  */
 
-package array
+package godash
 
 import (
 	"fmt"
