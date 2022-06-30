@@ -6,7 +6,8 @@
  * @Revise : --
  */
 
-package collection
+// “Collection” Methods
+package godash
 
 // CountBy Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
 // The corresponding value of each key is the number of times the key was returned by iteratee.
@@ -17,11 +18,6 @@ func CountBy(arr []any, f func(any) any) (result map[any]int) {
 	for i := 0; i < len(arr); i++ {
 		key := f(arr[i])
 		result[key]++
-		//if _, ok := result[key]; ok {
-		//	result[key]++
-		//} else {
-		//	result[key] = 1
-		//}
 	}
 	return result
 }
