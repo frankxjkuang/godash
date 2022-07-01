@@ -45,3 +45,19 @@ func Concat(array []any, args ...any) (result []any) {
 	}
 	return result
 }
+
+// Difference Creates an array of array values not included in the other given arrays.
+// The order and references of result values are determined by the first array.
+func Difference(array, values []any) (result []any) {
+	result = make([]any, 0)
+	keys := make(map[any]struct{})
+	for _, v := range values {
+		keys[v] = struct{}{}
+	}
+	for _, v := range array {
+		if _, ok := keys[v]; !ok {
+			result = append(result, v)
+		}
+	}
+	return result
+}
