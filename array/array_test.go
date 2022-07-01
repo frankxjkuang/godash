@@ -28,3 +28,11 @@ func ExampleConcat() {
 	// [1 2 3 [[4]]]
 	// [1]
 }
+
+func ExampleDifference() {
+	fmt.Println(Difference([]any{3, 2, 1}, []any{4, 2}))
+	fmt.Println(Difference([]any{3, 2, 1, "a", false, "c"}, []any{2, "c"}))
+	// Output:
+	// [3 1]
+	// [3 1 a false]
+}
