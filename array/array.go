@@ -9,7 +9,7 @@
 // “Array” Methods
 package array
 
-// Chunk Creates an array of elements split into groups the length of `size`.
+// Chunk creates an array of elements split into groups the length of `size`.
 // If `array` can't be split evenly, the final chunk will be the remaining elements.
 func Chunk(array []any, size int) (result [][]any) {
 	result = make([][]any, 0)
@@ -32,7 +32,7 @@ func Chunk(array []any, size int) (result [][]any) {
 	return
 }
 
-// Concat Creates a new array concatenating array with any additional arrays and/or values.
+// Concat creates a new array concatenating array with any additional arrays and/or values.
 func Concat(array []any, args ...any) (result []any) {
 	result = make([]any, len(array))
 	_ = copy(result, array)
@@ -46,7 +46,7 @@ func Concat(array []any, args ...any) (result []any) {
 	return result
 }
 
-// Difference Creates an array of array values not included in the other given arrays.
+// Difference creates an array of array values not included in the other given arrays.
 // The order and references of result values are determined by the first array.
 func Difference(array, values []any) (result []any) {
 	result = make([]any, 0)
@@ -60,4 +60,12 @@ func Difference(array, values []any) (result []any) {
 		}
 	}
 	return result
+}
+
+// Drop creates a slice of array with n elements dropped from the beginning.
+func Drop(array []any, num int) []any {
+	if num >= len(array) {
+		return []any{}
+	}
+	return array[num:]
 }
