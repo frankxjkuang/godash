@@ -36,3 +36,15 @@ func ExampleDifference() {
 	// [3 1]
 	// [3 1 a false]
 }
+
+func ExampleDrop()  {
+	fmt.Println(Drop([]any{1, 2, 3}, 0))
+	fmt.Println(Drop([]any{1, 2, 3}, 2))
+	fmt.Println(Drop([]any{1, 2, 3}, 3))
+	fmt.Println(Drop([]any{1, 2, 3}, 5))
+	// Output:
+	// [1 2 3]
+	// [3]
+	// []
+	// []
+}
