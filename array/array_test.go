@@ -37,7 +37,7 @@ func ExampleDifference() {
 	// [3 1 a false]
 }
 
-func ExampleDrop()  {
+func ExampleDrop() {
 	fmt.Println(Drop([]any{1, 2, 3}, 0))
 	fmt.Println(Drop([]any{1, 2, 3}, 2))
 	fmt.Println(Drop([]any{1, 2, 3}, 3))
@@ -45,6 +45,18 @@ func ExampleDrop()  {
 	// Output:
 	// [1 2 3]
 	// [3]
+	// []
+	// []
+}
+
+func ExampleDropRight() {
+	fmt.Println(DropRight([]any{1, 2, 3}, 0))
+	fmt.Println(DropRight([]any{1, 2, 3}, 2))
+	fmt.Println(DropRight([]any{1, 2, 3}, 3))
+	fmt.Println(DropRight([]any{1, 2, 3}, 5))
+	// Output:
+	// [1 2 3]
+	// [1]
 	// []
 	// []
 }
