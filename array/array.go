@@ -69,3 +69,11 @@ func Drop(array []any, num int) []any {
 	}
 	return array[num:]
 }
+
+// DropRight creates a slice of array with n elements dropped from the end.
+func DropRight(array []any, num int) []any {
+	if num >= len(array) {
+		return []any{}
+	}
+	return array[0 : len(array)-num]
+}
