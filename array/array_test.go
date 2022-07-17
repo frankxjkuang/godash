@@ -60,3 +60,17 @@ func ExampleDropRight() {
 	// []
 	// []
 }
+
+func ExampleIndexOf() {
+	fmt.Println(IndexOf([]any{1, 2, 1, 2}, 2, 0))
+	fmt.Println(IndexOf([]any{1, 2, 1, 2}, 2, 2))
+	fmt.Println(IndexOf([]any{1, 2, 1, 2}, 2, -1))
+	fmt.Println(IndexOf([]any{1, 2, 1, 2}, 0, -2))
+	fmt.Println(IndexOf([]any{1, 2, 1, 2}, 0, 5))
+	// Output:
+	// 1
+	// 3
+	// 3
+	// -1
+	// -1
+}
