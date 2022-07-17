@@ -77,3 +77,25 @@ func DropRight(array []any, num int) []any {
 	}
 	return array[0 : len(array)-num]
 }
+
+// DropRight gets the index at which the first occurrence of value is found in array using SameValueZero for equality comparisons. If fromIndex is negative, it's used as the offset from the end of array.
+// Returns the index of the matched value, else -1.
+func IndexOf(array []any, value, fromIndex int) int {
+	if fromIndex > len(array)-1 || len(array) == 0 {
+		return -1
+	}
+	if fromIndex >= 0 {
+		for i, v := range array {
+			if i >= fromIndex && v == value {
+				return i
+			}
+		}
+		return -1
+	}
+	for i := len(array) - 1; i >= 0; i-- {
+		if array[i] == value {
+			return i
+		}
+	}
+	return -1
+}
