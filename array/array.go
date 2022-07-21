@@ -99,3 +99,44 @@ func IndexOf(array []any, value, fromIndex int) int {
 	}
 	return -1
 }
+
+// Pull removes all given values from array.
+func Pull(array []any, a ...any) []any {
+	result := make([]any, 0)
+	kv := make(map[any]struct{})
+	for _, v := range a {
+		kv[v] = struct{}{}
+	}
+	for _, v := range array {
+		if _, ok := kv[v]; !ok {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
+// PullBy removes all values from array when f return true.
+func PullBy(array []any, f func(any) bool) []any {
+	result := make([]any, 0)
+	for _, v := range array {
+		if !f(v) {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
+// PullAt removes elements from array corresponding to indexes and returns an array of removed elements.
+func PullAt(array []any, idx ...int) []any {
+	result := make([]any, 0)
+	kv := make(map[int]struct{})
+	for _, v := range idx {
+		kv[v] = struct{}{}
+	}
+	for i, v := range array {
+		if _, ok := kv[i]; !ok {
+			result = append(result, v)
+		}
+	}
+	return result
+}
