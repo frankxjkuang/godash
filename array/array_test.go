@@ -74,3 +74,31 @@ func ExampleIndexOf() {
 	// -1
 	// -1
 }
+
+func ExamplePull() {
+	fmt.Println(Pull([]any{1, 2, 3, 1, 2, 3}, 2, 3))
+	fmt.Println(Pull([]any{"a", "b", "c", "a", "b", "c"}, "a", "c"))
+	// Output:
+	// [1 1]
+	// [b b]
+}
+
+func ExamplePullBy() {
+	fmt.Println(PullBy([]any{1, 2, 3, 1, 2, 3}, func(a any) bool {
+		return a.(int)%2 == 0
+	}))
+	fmt.Println(PullBy([]any{"a", "b", "c", "a", "b", "c"}, func(a any) bool {
+		return a.(string) == "b" || a.(string) == "c"
+	}))
+	// Output:
+	// [1 3 1 3]
+	// [a a]
+}
+
+func ExamplePullAt() {
+	fmt.Println(PullAt([]any{1, 2, 1, 2}, 0, 3))
+	fmt.Println(PullAt([]any{"a", "b", "c", "d"}, 1, 3, 5))
+	// Output:
+	// [2 1]
+	// [a c]
+}
